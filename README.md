@@ -39,3 +39,20 @@ Suggested Test Cases:
 - X X X X X X X X X X X X (12 rolls: 12 strikes) = 10 frames * 30 points = 300
 - 9- 9- 9- 9- 9- 9- 9- 9- 9- 9- (20 rolls: 10 pairs of 9 and miss) = 10 frames * 9 points = 90
 - 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/5 (21 rolls: 10 pairs of 5 and spare, with a final 5) = 10 frames * 15 points = 150
+
+
+## Implementation with Java and Cucumber
+
+This program is a basic Java Application integrating Cucumber.
+
+### Run it
+
+__Using Maven :__
+
+```
+#mvn -N io.takari:maven:wrapper -Dmaven=3.6.2
+mvn clean test
+mvn clean verify -DCucumberOptions="--glue 'cucumber' --plugin pretty 'features'"
+mvn package
+java -jar target/kata-bowling-1.0-SNAPSHOT.jar MainApp
+```
