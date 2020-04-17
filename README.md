@@ -1,5 +1,7 @@
 # kata-bowling-challenge
 
+[![Build Status](https://travis-ci.org/newlight77/kata-bowling.svg?branch=cucumber)](https://travis-ci.org/newlight77/kata-bowling)
+
 ## Problem Description
 
 Create a program, which, given a valid sequence of rolls for one line of American Ten-Pin Bowling, produces the total score for the game.
