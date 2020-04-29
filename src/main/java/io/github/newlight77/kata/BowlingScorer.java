@@ -17,6 +17,13 @@ public class BowlingScorer {
             if (frames.get(i).isSpare) {
                 frames.get(i).spareBonus = frames.get(i+1).first;
             }
+            if (frames.get(i).isStrike) {
+                if (frames.get(i+1).isStrike) {
+                    frames.get(i).strikeBonus = frames.get(i+1).first + frames.get(i+2).first;
+                } else {
+                    frames.get(i).strikeBonus = frames.get(i+1).first + frames.get(i+1).second;
+                }
+            }
         }
 
         return frames.stream()
@@ -29,17 +36,25 @@ public class BowlingScorer {
         int first;
         int second;
         int spareBonus;
+        int strikeBonus;
         boolean isSpare;
+        boolean isStrike;
 
         public Frame(String frame) {
-            String values = frame.replaceAll("-", "0");
-            first = Integer.parseInt(values.substring(0,1).replace("/", "10"));
-            second = Integer.parseInt(values.substring(1,2).replace("/", "10"));
+            String values = frame.replaceAll("[a-z|-]", "0");
+            first = Integer.parseInt(values.substring(0,1)
+                    .replace("/", "10")
+                    .replace("X", "10"));
+            if (values.length() > 1) {
+                second = Integer.parseInt(values.substring(1, 2)
+                        .replace("/", "10"));
+            }
             isSpare = frame.contains("/");
+            isStrike = frame.contains("X");
         }
 
         public int score() {
-            return first + second + spareBonus ;
+            return first + second + spareBonus +strikeBonus;
         }
     }
 }
