@@ -21,7 +21,7 @@ public class StepDefsSimpleScoring {
 
     @When("the score is calculated")
     public void the_score_is_calculated() {
-        score = new BowlingScorer(frameList).score().get();
+        score = new BowlingScorer(frameList).score();
     }
 
     @Then("the score is {int}")

@@ -18,6 +18,11 @@ Feature: Bowling Game
       | 21,22,23,24,25,26,27,2-,2-,2- | 48    |
       | --,22,-4,2-,2-,26,27,2-,26,27 | 48    |
 
-
-
-
+  Scenario Outline: Scoring a game with all some pins knocked and with spares
+    Given a game with knocked pins represented with "<frames>"
+    When the score is calculated
+    Then the score is <score>
+    Examples:
+      | frames                        | score |
+      | 21,22,23,24,25,26,2/,2-,2-,2- | 53    |
+      | --,22,-4,2-,2-,26,2/,2/,2/,27 | 71    |
