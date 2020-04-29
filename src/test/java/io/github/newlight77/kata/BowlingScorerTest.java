@@ -31,4 +31,17 @@ public class BowlingScorerTest {
         // assert
         Assertions.assertEquals(0, score);
     }
+
+    @Test
+    public void should_core_19_when_having_values() {
+        // arrange
+        List<String> frames = Arrays.asList("12", "-7", "72");
+
+        // act
+        int score = new BowlingScorer(frames).score().get();
+
+        // assert
+        Assertions.assertEquals(19, score);
+    }
+
 }

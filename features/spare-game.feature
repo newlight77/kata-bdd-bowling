@@ -6,8 +6,17 @@ Feature: Bowling Game
     When the score is calculated
     Then the score is <score>
     Examples:
-      | frames                          | score |
+      | frames                        | score |
       | --,--,--,--,--,--,--,--,--,-- | 0     |
+
+  Scenario Outline: Scoring a game with all some pins knocked down
+    Given a game with knocked pins represented with "<frames>"
+    When the score is calculated
+    Then the score is <score>
+    Examples:
+      | frames                        | score |
+      | 21,22,23,24,25,26,27,2-,2-,2- | 48    |
+      | --,22,-4,2-,2-,26,27,2-,26,27 | 48    |
 
 
 
