@@ -104,4 +104,15 @@ public class BowlingScorerTest {
         Assertions.assertEquals(19, score);
     }
 
+    @Test
+    public void should_core_300_when_having_only_strikes() {
+        // arrange
+        List<String> frames = Arrays.asList("X", "X", "X", "XXX");
+
+        // act
+        int score = new BowlingScorer(frames).score();
+
+        // assert
+        Assertions.assertEquals(120, score);
+    }
 }

@@ -47,7 +47,8 @@ public class BowlingScorer {
                     .replace("X", "10"));
             if (values.length() > 1) {
                 second = Integer.parseInt(values.substring(1, 2)
-                        .replace("/", "10"));
+                        .replace("/", "10")
+                        .replace("X", "10"));
             }
             isSpare = frame.contains("/");
             isStrike = frame.contains("X");

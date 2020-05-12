@@ -35,3 +35,11 @@ Feature: Bowling Game
       | frames                        | score |
       | X,22,23,24,X,X,2/,2-,2-,2-    | 93    |
       | --,22,-4,2-,2-,X,X,X,2/,27    | 109   |
+
+  Scenario Outline: Scoring a perfect game with only strikes
+    Given a game with knocked pins represented with "<frames>"
+    When the score is calculated
+    Then the score is <score>
+    Examples:
+      | frames                        | score |
+      | X,X,X,X,X,X,X,X,X,XXX         | 300   |

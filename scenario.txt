@@ -1,0 +1,50 @@
+
+  Scénario : Calcul complet score nulle
+  Etant donné que le joueur a fait le score suivant : --,--,--,--,--,--,--,--,--,--
+  Quand on calcule son score
+  Alors le score est 0
+
+  Scénario : Calcul complet simple
+  Etant donné que le joueur a fait le score suivant : 21,22,23,24,26,26,27,27,27,17
+  Quand on calcule son score
+  Alors le score est 69
+
+  Scénario : Calcul complet partie avec spare
+  Etant donné que le joueur a fait le score suivant : 5/,22,23,24,26,26,27,25,24,17
+  Quand on calcule son score
+  Alors le score est 75
+
+  Scénario : Calcul complet Strike
+  Etant donné que le joueur a fait le score suivant : X,22,23,24,26,26,27,28,28,17
+  Quand on calcule son score
+  Alors le score est 104
+
+  Scénario : Calcul complet score maximal
+  Etant donné que le joueur a fait le score suivant : X,X,X,X,X,X,X,X,X,XXX
+  Quand on calcule son score
+  Alors le score est 300
+
+  Scénario : Calcul complet bonus Spare
+  Etant donné que le joueur a fait le score suivant : 21,22,23,24,26,26,27,27,27,197
+  Quand on calcule son score
+  Alors le score est 78
+
+  Scénario : Calcul complet bonus Strike
+  Etant donné que le joueur a fait le score suivant : 45,22,23,24,26,26,27,25,24,XXX
+  Quand on calcule son score
+  Alors le score est 92
+
+  Scénario : Calcul incomplet simple
+  Etant donné que le joueur a fait le score suivant : 21,22,23
+  Quand on calcule son score temporaire
+  Alors le score est 12
+
+  Scénario : Calcul incomplet Spare
+  Etant donné que le joueur a fait le score suivant : 21,22,28
+  Quand on calcule son score temporaire
+  Alors le score est 7
+
+  Scénario : Calcul incomplet strike
+  Etant donné que le joueur a fait le score suivant : 21,22,X
+  Quand on calcule son score temporaire
+  Alors le score est 7
