@@ -1,12 +1,9 @@
-Feature: Example
-  A client wants to see an example
+Feature: Bowling Game
 
-  @Disabled
-  Scenario Outline: Example with some data
-    Given a example with a value of X is <valueX>
-    When the user requests <valueY>
-    Then the machine should display <valueZ>
-
+  Scenario Outline: Scoring a game with all missed pins
+    Given a game with knocked pins represented with "<frames>"
+    When the score is calculated
+    Then the score is <score>
     Examples:
-      | valueX | valueY   | valueZ |
-      | 100    | 20       | 80     |
+      | frames                        | score |
+      | --,--,--,--,--,--,--,--,--,-- | 0     |
