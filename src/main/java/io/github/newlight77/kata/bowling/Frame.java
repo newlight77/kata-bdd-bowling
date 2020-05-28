@@ -8,4 +8,12 @@ public class Frame {
         this.turn1 = turn1;
         this.turn2 = turn2;
     }
+
+    public String getTurn1() {
+        return turn1;
+    }
+
+    public String getTurn2() {
+        return turn2;
+    }
 }
