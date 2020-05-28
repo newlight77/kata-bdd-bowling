@@ -5,6 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.Assertions;
 import org.springframework.boot.web.server.LocalServerPort;
 
 import static io.restassured.RestAssured.given;
@@ -33,7 +34,7 @@ public class BowlingGameStepDefs {
                 .when()
                 .contentType(ContentType.JSON)
                 .body(this.frames)
-                .post(url)
+                .get(url)
                 .andReturn();
 
         // assert response not null;
@@ -43,9 +44,7 @@ public class BowlingGameStepDefs {
     }
 
     @Then("the score is {int}")
-    public void the_score_is(Integer score) {
-        assertThat(response.getStatusCode()).isBetween(200, 201);
-        assertThat(response.getBody()).isNotNull();
-        assertThat(response.getBody().asString()).isEqualTo(score.toString());
+    public void the_score_is(Integer finalScore) {
+        Assertions.assertEquals(finalScore, this.response.getBody().as(Integer.class).toString());
     }
 }
